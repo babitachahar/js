@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <h1>chai with code</h1>
+      <button id="start">start</button>
+      <button id="stop">stop</button>
+    </div>
+  </body>
+  <script>
+    function print() {
+      console.log("hi");
+    }
+    let li;
+    document.querySelector("#start").addEventListener("click", function (e) {
+      //setTimeout(print, 4000);
+      li = setInterval(print, 1000);
+    });
+    document.querySelector("#stop").addEventListener("click", function (e) {
+      //setTimeout(print, 4000);
+      clearInterval(li);
+    });
+
+    // setTimeout(print, 4000);
+    // setInterval(print, 1000);
+  </script>
+</html>

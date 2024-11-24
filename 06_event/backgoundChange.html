@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <h1>chai with code</h1>
+      <button id="start">start</button>
+      <button id="stop">stop</button>
+    </div>
+  </body>
+  <script>
+    const randomColor = function () {
+      const hex = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+    let intervalId;
+    document
+      .querySelector("#start")
+      .addEventListener("click", startChangingColor);
+    document
+      .querySelector("#stop")
+      .addEventListener("click", stopChangingColor);
+
+    function startChangingColor() {
+      intervalId = setInterval(change, 1000);
+      function change() {
+        document.body.style.backgroundColor = randomColor();
+      }
+    }
+
+    function stopChangingColor() {
+      console.log("hi");
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  </script>
+</html>
